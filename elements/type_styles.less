@@ -4,12 +4,12 @@
 
 
 
-// Create Heading styles
+// Create Heading styles (Value, Key, Index)
 
 each(@heading, .(@vs, @ks, @is) {
-    .@{ks}Size {
+    .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
-            .@{va}Aligned {
+            .@{ka}__Aligned {
                 each(@colors, {
                     .@{key} {
                         color: @value;
@@ -24,18 +24,38 @@ each(@heading, .(@vs, @ks, @is) {
 });
 
 
-// Create Normal Text styles
+// Create Normal Text styles with expanded line height (Value (Normal), Key(@font-base*1), Index(1 to 3))
 
 each(@normal-size, .(@vs, @ks, @is) {
-    .@{ks}Size {
+    .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
-            .@{va}Aligned {
+            .@{ka}__Aligned {
                 each(@colors, {
-                    .@{key} {
+                    .@{key}__Normal {
                         color: @value;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1.5;
+
+                    }
+                });
+            }
+        });
+    }
+});
+
+// Create Normal Text styles with contract line height for forms / buttons (Value (Normal), Key(@font-base*1), Index(1 to 3))
+
+each(@normal-size, .(@vs, @ks, @is) {
+    .@{ks}__Size {
+        each(@text-align, .(@va, @ka, @ia) {
+            .@{ka}__Aligned {
+                each(@colors, {
+                    .@{key}__Form {
+                        color: @value;
+                        font-size: @vs;
+                        text-align: @va;
+                        line-height: 1;
 
                     }
                 });
