@@ -1,0 +1,45 @@
+@import "../settings/typography.less";
+@import "../settings/colors.less";
+@import "../settings/globals.less";
+
+
+
+// Create Heading styles
+
+each(@heading, .(@vs, @ks, @is) {
+    .@{ks}Size {
+        each(@text-align, .(@va, @ka, @ia) {
+            .@{va}Aligned {
+                each(@colors, {
+                    .@{key} {
+                        color: @value;
+                        font-size: @vs;
+                        text-align: @va;
+                        line-height: 1.1;
+                    }
+                });
+            }
+        });
+    }
+});
+
+
+// Create Normal Text styles
+
+each(@normal-size, .(@vs, @ks, @is) {
+    .@{ks}Size {
+        each(@text-align, .(@va, @ka, @ia) {
+            .@{va}Aligned {
+                each(@colors, {
+                    .@{key} {
+                        color: @value;
+                        font-size: @vs;
+                        text-align: @va;
+                        line-height: 1.5;
+
+                    }
+                });
+            }
+        });
+    }
+});

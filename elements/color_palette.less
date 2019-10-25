@@ -1,0 +1,9 @@
+@import "../settings/colors.less";
+
+.Colours {
+    each(@colors, {
+        .@{key} {
+            background-color: @value;
+        }
+    });
+}
