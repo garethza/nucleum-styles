@@ -23,9 +23,10 @@ each(@heading, .(@vs, @ks, @is) {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
                 each(@colors, {
-                    .@{key}{
+                    .@{key} {
                         color: @value;
                         font-family: @font-heading;
+                        font-style: italic;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1.1;
@@ -37,15 +38,6 @@ each(@heading, .(@vs, @ks, @is) {
     }
 });
 
-
-@normal-size: {
-  Lead:      @font-base*1.125;
-  Body:      @font-base*1;
-  Small:     @font-base*0.875;
-}
-
-@font-body:          DINPro-Regular;
-@font-body-alt:      GothamRounded-Bold;
 
 // Create Normal Text styles with expanded line height (Value (Normal), Key(@font-base*1), Index(1 to 3))
 

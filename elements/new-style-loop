@@ -1,0 +1,34 @@
+// Create Normal Text styles with expanded line height (Value (Normal), Key(@font-base*1), Index(1 to 3))
+
+each(@normal-size, .(@vs, @ks, @is) {
+    .@{ks}__Size {
+        each(@text-align, .(@va, @ka, @ia) {
+            .@{ka}__Aligned {
+                each(@colors, {
+                    .Normal .@{key} {
+                        color: @value;
+                        font-family: @font-body;
+                        font-size: @vs;
+                        text-align: @va;
+                        line-height: 1.5;
+
+                    }
+                  });
+
+                    // Generate Form Styles (*1 Line Height)
+                    .Form {
+                      each(@colors, {
+                        .@{key} {
+                          color: @value;
+                          font-family: @font-body;
+                          font-size: @vs;
+                          text-align: @va;
+                          line-height: 1;
+                      }
+                      });
+
+                          }
+            }
+        });
+    }
+});
