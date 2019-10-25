@@ -23,19 +23,29 @@ each(@heading, .(@vs, @ks, @is) {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
                 each(@colors, {
-                    .@{key} {
+                    .@{key}{
                         color: @value;
                         font-family: @font-heading;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1.1;
                     }
+
                 });
             }
         });
     }
 });
 
+
+@normal-size: {
+  Lead:      @font-base*1.125;
+  Body:      @font-base*1;
+  Small:     @font-base*0.875;
+}
+
+@font-body:          DINPro-Regular;
+@font-body-alt:      GothamRounded-Bold;
 
 // Create Normal Text styles with expanded line height (Value (Normal), Key(@font-base*1), Index(1 to 3))
 
@@ -58,14 +68,14 @@ each(@normal-size, .(@vs, @ks, @is) {
     }
 });
 
-// Create Normal Text styles with contract line height for forms / buttons (Value (Normal), Key(@font-base*1), Index(1 to 3))
+// Create Contracted Normal Styles (*1.0 Line height)
 
 each(@normal-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
                 each(@colors, {
-                    .Form .@{key} {
+                    .Forms .@{key} {
                         color: @value;
                         font-family: @font-body;
                         font-size: @vs;
