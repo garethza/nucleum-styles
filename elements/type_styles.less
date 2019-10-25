@@ -2,7 +2,19 @@
 @import "../settings/colors.less";
 @import "../settings/globals.less";
 
-
+/*
+.TextStyle {
+    font-size:             12px;
+    font-family:           Open Sans; // or "Open Sans","Times New Roman"
+    font-weight:           bold;      // or extra-light, light, regular, medium, semibold, bold
+    line-height:           1.0;       // or 1.2 or 1.5 or any other mulitplier for font-size
+    color:                 #FFFFFF;
+    opacity:               63%;       // supported "63%" or "0.42"
+    text-transform:        uppercase; // "uppercase", "lowercase", and "none"
+    text-align:            left;      // "left", center", "right", "justify"
+    vertical-align:        top;       // "top", "middle", "bottom"
+}
+*/
 
 // Create Heading styles (Value, Key, Index)
 
@@ -13,6 +25,7 @@ each(@heading, .(@vs, @ks, @is) {
                 each(@colors, {
                     .@{key} {
                         color: @value;
+                        font-family: @font-heading;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1.1;
@@ -31,8 +44,9 @@ each(@normal-size, .(@vs, @ks, @is) {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
                 each(@colors, {
-                    .@{key}__Normal {
+                    .Normal .@{key} {
                         color: @value;
+                        font-family: @font-body;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1.5;
@@ -51,8 +65,9 @@ each(@normal-size, .(@vs, @ks, @is) {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
                 each(@colors, {
-                    .@{key}__Form {
+                    .Form .@{key} {
                         color: @value;
+                        font-family: @font-body;
                         font-size: @vs;
                         text-align: @va;
                         line-height: 1;
