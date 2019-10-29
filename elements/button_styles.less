@@ -1,0 +1,31 @@
+@import "../settings/colors.less";
+
+@buttons: {
+  Primary:          @color-primary;
+  Secondary:        @color-secondary;
+  White:            @color-white;
+}
+
+@border-width: 2px;
+
+.Buttons {
+  each(@buttons, .(@va, @ka, @ia) {
+    .@{ka} .Default {
+      background-color:  @va;
+    }
+    .@{ka} .Hover {
+      background-color: lighten(@va, 10%);;
+    }
+    .@{ka} .Focus {
+      background-color: darken(@va, 10%);
+    }
+    .@{ka} .Outline {
+      border-color: @va;
+      border-width: @border-width;
+    }
+    .@{ka} .Disabled {
+      background-color: lighten(desaturate(@va, 100%), 30%);
+    }
+
+    });
+}
