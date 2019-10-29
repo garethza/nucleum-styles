@@ -12,12 +12,38 @@
 @import "../settings/colors.less";
 @import "../settings/others.less";
 
+// Variables
 
 @buttons: {
   Primary:          @color-primary;
   Secondary:        @color-secondary;
   White:            @color-white;
 }
+
+@button-label: {
+  font-family:      @font-body;
+  font-weight:      bold;
+  font-size:        @normal-size[Text__SmallPrint]; //14px
+}
+
+
+// Text Styles
+
+.Components {
+  .Buttons {
+    each(@buttons, .(@va, @ka, @ia) {
+      .@{ka} {
+        @button-label[];
+        color:       @va;
+        text-decoration: none;
+      }
+    });
+  }
+}
+
+
+
+// Layer Styles
 
 .Buttons {
   each(@buttons, .(@va, @ka, @ia) {
