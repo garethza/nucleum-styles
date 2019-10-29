@@ -36,4 +36,12 @@
           });
         });
 
+      // Create Greyscale Tones
+        each(range(10), {
+          .Greyscale__@{index}00 {
+            background-color: if((@index < 10),lighten(@brand-color[Black], 0% + (@index)*10), lighten(@brand-color[Black], 95%));
+          }
+          });
+
+
 }
