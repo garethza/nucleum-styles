@@ -23,7 +23,7 @@ each(@heading-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
-                each(@colors, {
+                each(@brand-color, {
                     .@{key} {
                         color: @value;
                         font-family: @font-heading;
@@ -45,7 +45,7 @@ each(@normal-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
-                each(@colors, {
+                each(@brand-color, {
                     .Normal .@{key} {
                         color: @value;
                         font-family: @font-body;
@@ -58,7 +58,7 @@ each(@normal-size, .(@vs, @ks, @is) {
 
                     // Generate Form Styles (*1 Line Height)
                     .Form {
-                      each(@colors, {
+                      each(@brand-color, {
                         .@{key} {
                           color: @value;
                           font-family: @font-body;
