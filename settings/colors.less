@@ -4,15 +4,36 @@
 
 // High level declaration of colours. Tints and shades will be generated from this list
 
+
+//Primary Colours for branding
+
+@color-primary:            orange;
+@color-secondary:          blue;
+@color-black:              #1a1a1a;
+@color-white:              white;
+@color-background:         yellow;
+
+//Utility colours
+
+@color-danger:             #ce1126;
+@color-success:            #00c152;
+
+
 @brand-color: {
-    Primary:               orange;
-    Secondary:             blue;
-    Black:                 #1a1a1a;
-    White:                 white;
-    Background:            yellow;
+    Primary:               @color-primary;
+    Secondary:             @color-secondary;
+    Black:                 @color-black;
+    White:                 @color-white;
+    Background:            @color-background;
 }
 
-@util-color: {
-    Danger:                #ce1126;
-    Success:               #00c152;
+
+@all-color: {
+    Primary:               @color-primary;
+    Secondary:             @color-secondary;
+    Black:                 @color-black;
+    White:                 @color-white;
+    Background:            @color-background;
+    Danger:                @color-danger;
+    Success:               @color-success;
 }
