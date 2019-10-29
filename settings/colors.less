@@ -4,7 +4,6 @@
 
 // High level declaration of colours. Tints and shades will be generated from this list
 
-
 //Primary Colours for branding
 
 @color-primary:            orange;
@@ -18,11 +17,29 @@
 @color-danger:             #ce1126;
 @color-success:            #00c152;
 
+//Greyscale
+
+@color-greyscale: {
+  000:                     @color-black;
+  100:                     lighten(@color-black, 10%);
+  200:                     lighten(@color-black, 20%);
+  300:                     lighten(@color-black, 30%);
+  400:                     lighten(@color-black, 40%);
+  500:                     lighten(@color-black, 50%);
+  600:                     lighten(@color-black, 60%);
+  700:                     lighten(@color-black, 70%);
+  800:                     lighten(@color-black, 80%);
+  900:                     lighten(@color-black, 90%);
+  950:                     lighten(@color-black, 95%);
+  975:                     lighten(@color-black, 98%);
+}
+
+
 
 @brand-color: {
     _Primary:              @color-primary;
     _Secondary:            @color-secondary;
-    Greyscale__000:        @color-black;
+    Black:                 @color-black;
     White:                 @color-white;
     Background:            @color-background;
 }
@@ -36,7 +53,6 @@
 @all-color: {
     _Primary__000:         @color-primary;
     _Secondary__000:       @color-secondary;
-    Greyscale__000:        @color-black;
     White:                 @color-white;
     Background:            @color-background;
     Danger:                @color-danger;

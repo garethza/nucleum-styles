@@ -4,12 +4,16 @@
 
 // Generate your colour palettes here
 //
-// 1. All COLOURS
-// 2. Brand Tints (x2)
-// 3. Brand Tones (x2)
+// 1. All Colors
+// 2. Greyscale Colors
+// 3. Brand Tints (x2)
+// 4. Brand Tones (x2)
 
 
 @import "../settings/colors.less";
+
+
+// Create All Colors
 
 .Colours {
     each(@all-color, {
@@ -17,6 +21,15 @@
             background-color: @value;
         }
     });
+
+
+    // Create Greyscale colors
+    each(@color-greyscale, {
+        .Greyscale__@{key} {
+            background-color: @value;
+        }
+    });
+
 
     // Create Brand Tints
     each(@brand-shades, .(@va, @ka, @ia) {
@@ -35,13 +48,5 @@
           }
           });
         });
-
-      // Create Greyscale Tones
-        each(range(10), {
-          .Greyscale__@{index}00 {
-            background-color: if((@index < 10),lighten(@brand-color[Greyscale__000], 0% + (@index)*10), lighten(@brand-color[Greyscale__000], 95%));
-          }
-          });
-
 
 }
