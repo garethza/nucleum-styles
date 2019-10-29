@@ -1,10 +1,14 @@
-// @import "../settings/globals.less";
-@import "../settings/typography.less";
-@import "../settings/colors.less";
+// =============================================================================
+// ELEMENTS / TYPE STYLES
+// =============================================================================
 
+// Generate all your Sketch Type STYLES
+//
+// 1. Heading STYLES
+// 2. Other Normal Styles (With normal 1.5 line height)
+// 3. Other Normal Styles (With 1.0 line height for forms, UI etc)
 
-/*
-.TextStyle {
+/*  Text Style Variables Available
     font-size:             12px;
     font-family:           Open Sans; // or "Open Sans","Times New Roman"
     font-weight:           bold;      // or extra-light, light, regular, medium, semibold, bold
@@ -14,10 +18,16 @@
     text-transform:        uppercase; // "uppercase", "lowercase", and "none"
     text-align:            left;      // "left", center", "right", "justify"
     vertical-align:        top;       // "top", "middle", "bottom"
-}
 */
 
-// Create Heading styles (Value, Key, Index)
+
+
+
+
+@import "../settings/typography.less";
+@import "../settings/colors.less";
+
+// Create Heading styles
 
 each(@heading-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
@@ -25,12 +35,12 @@ each(@heading-size, .(@vs, @ks, @is) {
             .@{ka}__Aligned {
                 each(@brand-color, {
                     .@{key} {
-                        color: @value;
-                        font-family: @font-heading;
-                        font-style: italic;
-                        font-size: @vs;
-                        text-align: @va;
-                        line-height: 1.1;
+                        color: @value;                //Value of @brand-color
+                        font-family: @font-heading;   //Heading Font
+                        //font-style: italic;
+                        font-size: @vs;               //Heading Size - Value
+                        text-align: @va;              //Text Align - Value
+                        line-height: 1.1;             //Smaller Line Height for Headings
                     }
 
                 });
@@ -39,7 +49,7 @@ each(@heading-size, .(@vs, @ks, @is) {
     }
 });
 
-// Create Normal styles + Form Styles of Normal
+// Create Normal styles
 
 each(@normal-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
@@ -49,14 +59,14 @@ each(@normal-size, .(@vs, @ks, @is) {
                     .Normal .@{key} {
                         color: @value;
                         font-family: @font-body;
-                        font-size: @vs;
-                        text-align: @va;
-                        line-height: 1.5;
+                        font-size: @vs;             //Normal Size - Value
+                        text-align: @va;            //@text-align - Value
+                        line-height: 1.5;           //For normal body copy
 
                     }
                   });
 
-                    // Generate Form Styles (*1 Line Height)
+                    // Generate Form Styles (Smaller Line Height)
                     .Form {
                       each(@all-color, {
                         .@{key} {
@@ -64,7 +74,7 @@ each(@normal-size, .(@vs, @ks, @is) {
                           font-family: @font-body;
                           font-size: @vs;
                           text-align: @va;
-                          line-height: 1;
+                          line-height: 1;            //For UI/Forms
                       }
                       });
 

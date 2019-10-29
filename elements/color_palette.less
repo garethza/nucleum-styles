@@ -1,9 +1,39 @@
+// =============================================================================
+// ELEMENTS / COLOUR PALETTES
+// =============================================================================
+
+// Generate your colour palettes here
+//
+// 1. All COLOURS
+// 2. Brand Tints (x2)
+// 3. Brand Tones (x2)
+
+
 @import "../settings/colors.less";
 
 .Colours {
-    each(@brand-color, {
+    each(@all-color, {
         .@{key} {
             background-color: @value;
         }
     });
+
+    // Create Brand Tints
+    each(@brand-shades, .(@va, @ka, @ia) {
+      each(range(2), {
+        .@{ka}__@{index}00 {
+          background-color: tint(@va, 20% + (@index)*50%/2);
+        }
+        });
+      });
+
+      // Create Brand Tones
+      each(@brand-shades, .(@va, @ka, @ia) {
+        each(range(2), {
+          .@{ka}__-@{index}00 {
+            background-color: shade(@va, 20% + (@index)*50%/2);
+          }
+          });
+        });
+
 }
