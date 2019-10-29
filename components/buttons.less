@@ -1,23 +1,23 @@
 // =============================================================================
-// ELEMENTS / BUTTON STYLES
+// STYLES / BUTTON STYLES
 // =============================================================================
 
 // Generate all your Sketch Button Styles
 //
 // Add all your button styles to the @buttons variable and it will
-// generate all the styles you need for buttons. 
+// generate all the styles you need for buttons.
 
 
 
 @import "../settings/colors.less";
+@import "../settings/others.less";
+
 
 @buttons: {
   Primary:          @color-primary;
   Secondary:        @color-secondary;
   White:            @color-white;
 }
-
-@border-width: 2px;
 
 .Buttons {
   each(@buttons, .(@va, @ka, @ia) {

@@ -1,0 +1,97 @@
+// =============================================================================
+// COMPONENTS / FORMS
+// =============================================================================
+
+// Generate your colour palettes here
+//
+// 1. Variables
+// 2. Text Styles
+// 3. Layer Styles
+
+@import "../settings/typography.less";
+@import "../settings/colors.less";
+@import "../settings/others.less";
+
+
+// Variables
+
+@form-label:            @normal-size[Text__Body];
+@form-placeholder:      @normal-size[Text__Body];
+@form-error:            @normal-size[Text__SmallPrint];
+@form-success:          @normal-size[Text__SmallPrint];
+
+@form-style-default: {
+    background-color:    @color-white;
+    border-width:        @border-width;
+    border-color:        lighten(@brand-color[Greyscale__000], 50%);
+    border-position:     inside;
+}
+
+@form-style-focus: {
+    background-color:    @color-white;
+    border-width:        @border-width;
+    border-color:        @color-primary;
+    border-position:     inside;
+}
+
+@form-style-error: {
+    background-color:    @color-white;
+    border-width:        @border-width;
+    border-color:        @color-danger;
+    border-position:     inside;
+}
+
+
+// TEXT Styles
+
+.Components {
+    .Forms {
+        .Label {
+          font-size:       @form-label;
+          font-family:     @font-body;
+          color:           @color-primary;
+          font-weight:     bold;
+        }
+
+        .Placeholder {
+          font-size:       @form-label;
+          font-family:     @font-body;
+          color:           lighten(@brand-color[Greyscale__000], 50%);
+          //font-weight:   bold;
+        }
+
+        .Error {
+          font-size:       @form-label;
+          font-family:     @font-body;
+          color:           @color-danger;
+          font-weight:     bold;
+        }
+
+        .Success {
+          font-size:       @form-label;
+          font-family:     @font-body;
+          color:           @color-success;
+          font-weight:     bold;
+        }
+
+
+    }
+}
+
+// Layer Styles
+
+.Components {
+    .Forms {
+        .Default {
+          @form-style-default[];
+        }
+
+        .Focused {
+          @form-style-focus[];
+        }
+
+        .Error {
+          @form-style-error[];
+        }
+    }
+}
