@@ -1,6 +1,7 @@
+// @import "../settings/globals.less";
 @import "../settings/typography.less";
 @import "../settings/colors.less";
-@import "../settings/globals.less";
+
 
 /*
 .TextStyle {
@@ -18,7 +19,7 @@
 
 // Create Heading styles (Value, Key, Index)
 
-each(@heading, .(@vs, @ks, @is) {
+each(@heading-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
         each(@text-align, .(@va, @ka, @ia) {
             .@{ka}__Aligned {
@@ -38,8 +39,7 @@ each(@heading, .(@vs, @ks, @is) {
     }
 });
 
-
-// Create Normal Text styles with expanded line height (Value (Normal), Key(@font-base*1), Index(1 to 3))
+// Create Normal styles + Form Styles of Normal
 
 each(@normal-size, .(@vs, @ks, @is) {
     .@{ks}__Size {
@@ -54,28 +54,21 @@ each(@normal-size, .(@vs, @ks, @is) {
                         line-height: 1.5;
 
                     }
-                });
-            }
-        });
-    }
-});
+                  });
 
-// Create Contracted Normal Styles (*1.0 Line height)
+                    // Generate Form Styles (*1 Line Height)
+                    .Form {
+                      each(@colors, {
+                        .@{key} {
+                          color: @value;
+                          font-family: @font-body;
+                          font-size: @vs;
+                          text-align: @va;
+                          line-height: 1;
+                      }
+                      });
 
-each(@normal-size, .(@vs, @ks, @is) {
-    .@{ks}__Size {
-        each(@text-align, .(@va, @ka, @ia) {
-            .@{ka}__Aligned {
-                each(@colors, {
-                    .Forms .@{key} {
-                        color: @value;
-                        font-family: @font-body;
-                        font-size: @vs;
-                        text-align: @va;
-                        line-height: 1;
-
-                    }
-                });
+                          }
             }
         });
     }

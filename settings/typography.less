@@ -4,21 +4,24 @@
 
 // Declare master typography values here
 
-@import "globals.less";
+// @import "globals.less";
 
+@font-base:          16px;
+@font-heading:       "Nobel-Bold";
+@font-body:          "Helvetica Neue";
 
-@heading: {
-  Heading__Alpha:        @font-base*3;
-  Heading__Bravo:        @font-base*2;
-  Heading__Charlie:      @font-base*1.75;
-  Heading__Delta:        @font-base*1.5;
+@heading-size: {
+  Heading__Alpha:        @font-base*3;       //48px
+  Heading__Bravo:        @font-base*2;       //32px
+  Heading__Charlie:      @font-base*1.75;    //28px
+  Heading__Delta:        @font-base*1.5;     //24px
 }
 
 @normal-size: {
-  Text__Lead:            @font-base*1.125;
-  Text__Body:            @font-base*1;
-  Text__SmallPrint:      @font-base*0.875;;
-  Text__Signoff:         @font-base*0.75;
+  Text__Lead:            @font-base*1.125;   //18px
+  Text__Body:            @font-base*1;       //16px
+  Text__SmallPrint:      @font-base*0.875;;  //14px
+  Text__Signoff:         @font-base*0.75;    //12px
 }
 
 @text-align: {
