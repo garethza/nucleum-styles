@@ -31,7 +31,7 @@
 
 ._General {
 
-    .Desktop__Heading {
+    ._Desktop__Heading {
 
           each(@heading-desktop, .(@vs, @ks, @is) {
               .@{ks} /* Size */ {
@@ -45,6 +45,7 @@
                                   font-size: @vs;               //Heading Size - Value
                                   text-align: @va;              //Text Align - Value
                                   line-height: 1.1;             //Smaller Line Height for Headings
+                                  font-weight: @text-weight[Bold];
                               }
 
                           });
@@ -55,7 +56,7 @@
 
         }
 
-        .Mobile__Heading {
+        ._Mobile__Heading {
 
               each(@heading-mobile, .(@vs, @ks, @is) {
                   .@{ks} /* Size */ {
@@ -69,6 +70,8 @@
                                       font-size: @vs;               //Heading Size - Value
                                       text-align: @va;              //Text Align - Value
                                       line-height: 1.1;             //Smaller Line Height for Headings
+                                      font-weight: @text-weight[Bold];
+
                                   }
 
                               });
@@ -86,30 +89,50 @@
           .@{ks} /* Size */ {
               each(@text-align, .(@va, @ka, @ia) {
                   .@{ka} /* Alignment */ {
-                      each(@brand-color, {
-                          .Normal .@{key} {
-                              color: @value;
-                              font-family: @font-body;
-                              font-size: @vs;             //Normal Size - Value
-                              text-align: @va;            //@text-align - Value
-                              line-height: 1.5;           //For normal body copy
-
+                      each(@brand-color, .(@vd, @kd, @id) {
+                          ._Normal .@{kd} {
+                            each(@text-weight, .(@vt, @kt, @it) {
+                              .@{kt} {
+                                  color: @vd;
+                                  font-family: @font-body;
+                                  font-size: @vs;             //Normal Size - Value
+                                  text-align: @va;            //@text-align - Value
+                                  font-weight: @vt;
+                                  line-height: 1.5;           //For normal body copy
+                                  }
+                              });
                           }
                         });
 
                           // Generate Form Styles (Smaller Line Height)
                           .Form {
-                            each(@all-color, {
+                            each(@all-color, .(@ve, @ke, @ie) {
+                                .@{ke} {
+                                  each(@text-weight, .(@vn, @kn, @in) {
+                                    .@{kn} {
+                                        color: @ve;
+                                        font-family: @font-body;
+                                        font-size: @vs;             //Normal Size - Value
+                                        text-align: @va;            //@text-align - Value
+                                        font-weight: @vn;
+                                        line-height: 1;           //For normal body copy
+                                        }
+                                    });
+                                }
+                              });
+
+                            /*each(@all-color, {
                               .@{key} {
                                 color: @value;
                                 font-family: @font-body;
+                                font-weight: regular;
                                 font-size: @vs;
                                 text-align: @va;
                                 line-height: 1;            //For UI/Forms
                             }
-                            });
+                            });*/
 
-                                }
+                          }
                   }
               });
           }
