@@ -45,11 +45,13 @@
 // TEXT Styles
 
 .Components {
+  .Basic {
     .Forms {
         .Label {
           font-size:       @form-label;
           font-family:     @font-body;
           color:           @color-primary;
+          line-height:     1;
           font-weight:     bold;
         }
 
@@ -57,25 +59,37 @@
           font-size:       @form-label;
           font-family:     @font-body;
           color:           @color-greyscale[500];
+          line-height:     1;
+          //font-weight:   bold;
+        }
+
+        .Value {
+          font-size:       @form-label;
+          font-family:     @font-body;
+          color:           @color-greyscale[100];
+          line-height:     1;
           //font-weight:   bold;
         }
 
         .Error {
-          font-size:       @form-label;
+          font-size:       @form-error;
           font-family:     @font-body;
           color:           @color-danger;
+          line-height:     1;
           font-weight:     bold;
         }
 
         .Success {
-          font-size:       @form-label;
+          font-size:       @form-success;
           font-family:     @font-body;
           color:           @color-success;
+          line-height:     1;
           font-weight:     bold;
         }
 
 
     }
+  }
 }
 
 // Layer Styles

@@ -30,15 +30,18 @@
 // Text Styles
 
 .Components {
-  .Buttons {
-    each(@buttons, .(@va, @ka, @ia) {
-      .@{ka} {
-        @button-label[];
-        color:       @va;
-        text-decoration: none;
+  .Basic {
+      .Buttons {
+        each(@buttons, .(@va, @ka, @ia) {
+          .@{ka} {
+            @button-label[];
+            color:       @va;
+            line-height:     1;
+            text-decoration: none;
+          }
+        });
       }
-    });
-  }
+    }
 }
 
 
