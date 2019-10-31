@@ -90,9 +90,9 @@
               each(@text-align, .(@va, @ka, @ia) {
                   .@{ka} /* Alignment */ {
                       each(@brand-color, .(@vd, @kd, @id) {
-                          ._Normal .@{kd} {
+                          ._Normal .@{kd} /* Color */{
                             each(@text-weight, .(@vt, @kt, @it) {
-                              .@{kt} {
+                              .@{kt} /* Text Weight */{
                                   color: @vd;
                                   font-family: @font-body;
                                   font-size: @vs;             //Normal Size - Value
@@ -107,9 +107,9 @@
                           // Generate Form Styles (Smaller Line Height)
                           .Form {
                             each(@all-color, .(@ve, @ke, @ie) {
-                                .@{ke} {
+                                .@{ke} /* Color */{
                                   each(@text-weight, .(@vn, @kn, @in) {
-                                    .@{kn} {
+                                    .@{kn} /* Text Weight */{
                                         color: @ve;
                                         font-family: @font-body;
                                         font-size: @vs;             //Normal Size - Value
@@ -120,17 +120,6 @@
                                     });
                                 }
                               });
-
-                            /*each(@all-color, {
-                              .@{key} {
-                                color: @value;
-                                font-family: @font-body;
-                                font-weight: regular;
-                                font-size: @vs;
-                                text-align: @va;
-                                line-height: 1;            //For UI/Forms
-                            }
-                            });*/
 
                           }
                   }
